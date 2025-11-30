@@ -47,8 +47,8 @@ export default async function handler(req, res) {
         const { credentials, startDate, endDate } = req.body;
 
         // Use environment variables if available, otherwise use credentials from request
-        const appId = process.env.VITE_FLIPKART_APP_ID || credentials?.appId;
-        const appSecret = process.env.VITE_FLIPKART_APP_SECRET || credentials?.appSecret;
+        const appId = process.env.FLIPKART_APP_ID || credentials?.appId;
+        const appSecret = process.env.FLIPKART_APP_SECRET || credentials?.appSecret;
 
         if (!appId || !appSecret) {
             return res.status(400).json({ error: 'Missing Flipkart credentials (appId, appSecret)' });

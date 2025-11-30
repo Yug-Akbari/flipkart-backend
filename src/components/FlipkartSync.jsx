@@ -12,10 +12,11 @@ export default function FlipkartSync({ onSyncComplete }) {
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
 
-    // Load default credentials from environment variables
+    // Load default credentials from environment variables (if exposed)
+    // For security, credentials should be entered by user or stored server-side
     const [credentials, setCredentials] = useState({
-        appId: import.meta.env.VITE_FLIPKART_APP_ID || '',
-        appSecret: import.meta.env.VITE_FLIPKART_APP_SECRET || ''
+        appId: '',
+        appSecret: ''
     })
 
     const [dateRange, setDateRange] = useState({
@@ -102,45 +103,36 @@ export default function FlipkartSync({ onSyncComplete }) {
                 {error && <div className="error-msg">{error}</div>}
                 {success && <div className="success-msg">{success}</div>}
 
-                {/* Show credentials section only if not pre-configured */}
-                {!import.meta.env.VITE_FLIPKART_APP_ID && (
-                    <div className="form-section">
-                        <h3>API Credentials</h3>
-                        <p className="help-text">
-                            Get these from Flipkart Seller Hub → Settings → API Credentials
-                        </p>
+                {/* Always show credentials section for security */}
+                <div className="form-section">
+                    <h3>API Credentials</h3>
+                    <p className="help-text">
+                        Get these from Flipkart Seller Hub → Settings → API Credentials
+                    </p>
 
-                        <input
-                            type="text"
-                            placeholder="Application ID"
-                            value={credentials.appId}
-                            onChange={(e) => setCredentials({ ...credentials, appId: e.target.value })}
-                        />
+                    <input
+                        type="text"
+                        placeholder="Application ID"
+                        value={credentials.appId}
+                        onChange={(e) => setCredentials({ ...credentials, appId: e.target.value })}
+                    />
 
-                        <input
-                            type="password"
-                            placeholder="Application Secret"
-                            value={credentials.appSecret}
-                            onChange={(e) => setCredentials({ ...credentials, appSecret: e.target.value })}
-                        />
+                    <input
+                        type="password"
+                        placeholder="Application Secret"
+                        value={credentials.appSecret}
+                        onChange={(e) => setCredentials({ ...credentials, appSecret: e.target.value })}
+                    />
 
-                        <div className="button-group">
-                            <button onClick={saveCredentials} className="secondary-btn">
-                                Save Credentials
-                            </button>
-                            <button onClick={loadCredentials} className="secondary-btn">
-                                Load Saved
-                            </button>
-                        </div>
+                    <div className="button-group">
+                        <button onClick={saveCredentials} className="secondary-btn">
+                            Save Credentials
+                        </button>
+                        <button onClick={loadCredentials} className="secondary-btn">
+                            Load Saved
+                        </button>
                     </div>
-                )}
-
-                {import.meta.env.VITE_FLIPKART_APP_ID && (
-                    <div className="info-box" style={{ marginBottom: '20px' }}>
-                        ✅ <strong>Credentials Pre-configured</strong><br />
-                        Using default Flipkart API credentials from environment.
-                    </div>
-                )}
+                </div>
 
                 <div className="form-section">
                     <h3>Date Range</h3>
