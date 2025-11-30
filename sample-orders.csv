@@ -1,0 +1,9 @@
+date,account,orderId,customerName,amount,paymentType,status,state,rto,replacement,deliveredDate
+2024-11-25,Amazon,ORD001,John Doe,1500,COD,Delivered,Maharashtra,false,false,2024-11-28
+2024-11-26,Amazon,ORD002,Jane Smith,2300,Prepaid,Shipped,Delhi,false,false,
+2024-11-27,Flipkart,ORD003,Bob Wilson,890,COD,Pending,Karnataka,false,false,
+2024-11-27,Amazon,ORD004,Alice Brown,3200,Prepaid,Delivered,Gujarat,false,false,2024-11-29
+2024-11-28,Amazon,ORD005,Charlie Davis,1200,COD,Shipped,Tamil Nadu,false,false,
+2024-11-28,Flipkart,ORD006,Eve Martinez,450,COD,Delivered,Rajasthan,true,false,2024-11-29
+2024-11-29,Amazon,ORD007,Frank Garcia,2800,Prepaid,Pending,West Bengal,false,false,
+2024-11-29,Amazon,ORD008,Grace Lee,1650,COD,Shipped,Uttar Pradesh,false,true,

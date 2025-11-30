@@ -1,0 +1,67 @@
+.dashboard h1 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #ddd;
+}
+
+.stat-card.primary {
+    border-left-color: #1976d2;
+}
+
+.stat-card.success {
+    border-left-color: #4caf50;
+}
+
+.stat-card.warning {
+    border-left-color: #ff9800;
+}
+
+.stat-card.info {
+    border-left-color: #00bcd4;
+}
+
+.stat-card h3 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.chart-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.25rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+}
